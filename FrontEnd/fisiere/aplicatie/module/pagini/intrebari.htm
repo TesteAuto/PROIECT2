@@ -1,0 +1,112 @@
+<!-- INTREBARI & RASPUNSURI -->
+<div class="container intrebari">
+<legend class="textLegendaIntrebare">Întrebări frecvente şi răspunsuri</legend>
+	<button type="button" class="btn btn-primary" ng-click="deschideTot()">Deschide tot</button>
+	<button type="button" class="btn btn-primary" ng-click="inchideTot()">Închide tot</button>
+	<uib-accordion close-others="false">
+	<div uib-accordion-group class="panel-default" is-open="i.deschideInchide" heading="{{i.intrebare}}" ng-repeat="i in intrebareRaspuns">
+			{{i.raspuns}}
+		</div>
+	</uib-accordion>
+	<div class="pull-right">
+		<button type="button" class="btn btn-primary" ng-click="deschideTot()">Deschide tot</button>
+		<button type="button" class="btn btn-primary" ng-click="inchideTot()">Închide tot</button>
+	</div>
+<!-- COMENTARII -->
+<div class="container">
+	<div class="row">
+			<div class="hidden-xs col-xs-12 col-sm-9">
+					<div class="page-header"></div>
+					<div class="comment-tabs">
+							<ul class="nav nav-tabs" role="tablist">
+								<li class="active"><a class="headCom" href="#lista-comentarii" role="tab" data-toggle="tab"><h4 class="comentariiHeader text-capitalize">Comentarii</h4></a></li>
+								<li><a class="headCom" href="#adauga-comentarii" role="tab" data-toggle="tab"><h4 class="comentariiHeader">Adaugă un comentariu</h4></a></li>
+								<li class="pull-right" ng-controller="comentariiController"><h1><small> #{{totalComentarii}} <span class="hidden-xs">comentarii<span></small></h1></li>
+							</ul>   
+							<!-- CONTINUT TAB-URI -->
+							<div class="tab-content" ng-controller="comentariiController">
+							    <!-- COMENTARII -->
+							    <div class="tab-pane active" id="lista-comentarii">
+							    <div ng-repeat="c in afiseazaComentarii">
+								    <div class="media mediaCom">
+								    	<div class="media-left media-middle">
+								    			<img class="media-object img-circle" ng-src="{{c.poza}}" alt="lipsa imagine">
+								    			<h4 class="media-heading numeUtilizator text-center">{{c.utilizator}}</h4>
+								    	</div>
+								    	<div class="media-body">
+								    		<h4 class="media-heading numeUtilizator text-left">{{c.titlu}} <span class="pull-right">{{c.data}}</span></h4>
+								    		<div class="textCom">
+								    												Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. Sed iaculis posuere diam ut cursus. Morbi commodo sodales nisi id sodales.Proin consectetur, nisi id commodo imperdiet, metus nunc consequat lectus, id bibendum diam velit et dui. Proin massa magna, vulputate nec bibendum nec, posuere nec lacus. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam eget sapien sapien. Curabitur in metus urna. In hac habitasse platea dictumst. Phasellus eu sem sapien, sed vestibulum velit. Nam purus nibh, lacinia non faucibus et, pharetra in dolor. 
+								    		</div>
+								    	</div>
+								    	<hr/>
+								    </div>
+							    </div>
+							    </div>
+									<!-- FINAL COMENTARII -->
+									<!-- FORMULAR -->
+									<div class="tab-pane" id="adauga-comentarii">
+									   <div ng-if="!autentificareJWT">
+									   		<p class="text-center atentionare">
+									   			     Intră în contul tău pentru a posta comentarii. 
+									   			       Nu ai încă un cont la noi? Ce mai aştepţi? 
+									   			          E foarte simplu să te înregistrezi! 
+									   			        În plus, beneficiezi de extra-avantaje!
+									   		</p>
+	                  </div>
+										<div ng-if="autentificareJWT" ng-controller="comentariiController">
+	                   <form class="form-horizontal" name="adaugaComentariuForm" novalidate>
+						            <fieldset>
+						              <legend class="textLegendaMesaj"></legend>
+						              <!-- Text input Titlu comentariu-->
+						              <div class="form-group">
+						                <label class="col-md-3 control-label">Titlu comentariu</label>
+						                <div class="col-md-6 inputGroupContainer">
+						                  <div class="input-group">
+						                    <span class="input-group-addon"><i class="glyphicon glyphicon-share-alt"></i></span>
+						                    <input  name="titluCom" placeholder="" class="form-control" ng-model="titluCom" type="text" required>
+						                  </div>
+						                  <!-- Validare camp titlu comentariu -->
+						                  <div ng-messages="adaugaComentariuForm.titluCom.$error">
+						                    <div ng-message="required" class="eroareMesaj">* Vă rugăm să completaţi câmpul titlu comentariu</div>
+						                  </div>
+						                </div>
+						              </div>
+						              <!-- Text area Comentariu-->
+						              <div class="form-group">
+						                <label class="col-md-3 control-label">Comentariu</label>
+						                <div class="col-md-6 inputGroupContainer">
+						                  <div class="input-group">
+						                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+						                    <!-- Numar limitat de caractere intr-un mesaj -->
+						                    <textarea class="form-control" name="nrCaractere" placeholder="" ng-model="nrCaractere" ng-trim="false" maxlength="250" required></textarea>
+						                  </div>
+						                  <!-- Validare camp mesaj -->
+						                  <div ng-messages="adaugaComentariuForm.nrCaractere.$error">
+						                    <div ng-message="required" class="eroareMesaj">* Vă rugăm să completaţi câmpul comentariu</div>
+						                  </div>
+						                  <span class="nrCaractereMesaj pull-right">*Caractere rămase {{250 - nrCaractere.length}}</span>
+						                </div>
+						              </div>
+						              <!-- Button -->
+						              <div class="form-group">
+						                <label class="col-md-3 control-label"></label>
+						                <div class="col-md-6">
+						                  <div class="aliniereBtnMesaj">
+						                    <button type="submit" class="btn btn-warning marimeBtnMesaj" ng-disabled="adaugaComentariuForm.$invalid" ng-click = "trimiteComentariu()">Trimite <span class="glyphicon glyphicon-send"></span></button>
+						                    <button type="submit" class="btn btn-danger marimeBtnMesaj" ng-click = "cancelComentariu()">Anulează <span class="glyphicon glyphicon-erase"></span></button>
+						                  </div>
+						                </div>
+						              </div>
+						            </fieldset>
+          						</form>
+	                	</div>
+	                </div>
+	                <!-- FINAL FORMULAR -->
+							</div>
+							<!-- FINAL CONTINUT TAB_URI -->
+					</div>
+			</div>
+		</div>
+	</div>
+</div>

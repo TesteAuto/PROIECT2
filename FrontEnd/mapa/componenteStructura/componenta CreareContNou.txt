@@ -1,0 +1,38 @@
+├── BackEnd
+│   ├── fisiere
+│   │    ├── BazaDate
+│	│	 │	 ├── conectare.php
+│	│	 │	 │		// Creare Cont Nou
+│	│	 │	 │		
+│	│	 │ 	 └── creareBD.php
+│	│	 │			
+│	│	 │			
+│   │    └── ServiciiREST
+│   │      	 ├── creareREST.php
+│	│		 │		
+│	│		 │		
+│	│	  	 └── principal.php
+│	│				// Creare Cont Nou
+│	│		 		
+│   └──index.php 
+│      // Creare Cont Nou
+│  
+├── FrontEnd
+│   ├── fisiere
+│   │   └── aplicatie
+│   │         └── module
+│ 	│ 			    ├── controller
+│   │               │     └──creareContModalController.js
+│ 	│ 			    ├── pagini
+│ 	│ 			    │ 	  └──parti
+│   │               │            └── creareContModal.htm
+│   │               ├── service
+│	│				│	  └──serviceCreareContNou.js
+│	│				├── style
+│	│				│	  └──creareContModal.css
+│   │               │
+│	│			    ├──introModulParticular.js
+│	│			    └──aplicatie.js
+└   └── mapa
+        └── index.html
+            <!-- Creare Cont Nou -->

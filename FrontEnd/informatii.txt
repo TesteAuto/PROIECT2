@@ -1,0 +1,9 @@
+http://localhost/PROIECT2/BackEnd/fisiere/test.php
+
+
+npm install
+C:\MAMP\htdocs\PROIECT2\FrontEnd
+
+
+npm run mapa
+http://localhost/PROIECT2/FrontEnd/mapa/index.html

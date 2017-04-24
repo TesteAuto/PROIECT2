@@ -1,0 +1,9 @@
+video{
+		width:500px;
+	}
+@media screen and (max-width: 1999px) {
+	video{
+		width:450px;
+		margin-bottom: 10px;
+	}
+}

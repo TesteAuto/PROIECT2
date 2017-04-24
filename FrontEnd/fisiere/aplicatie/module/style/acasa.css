@@ -1,0 +1,27 @@
+.navbar.navbar-inverse{
+	margin: 0px;
+}
+.container-fluid{
+	padding: 0px;
+}
+.well{
+	opacity:0.7;
+	color:#2f374c;
+	text-align: justify;
+	text-shadow: white 2px 5px; 
+}
+.title{ color:white; font-size:40px; }
+.carousel img {
+    width:100%; 
+    height:auto;
+}
+@media (min-width: 768px) and (max-width: 1052px) {
+	.well>p{
+		font-size:15px;
+	}
+}
+@media (min-width: 1053px) {
+	.carousel-caption, .carousel-indicators{
+		height: 58%;
+	}
+}

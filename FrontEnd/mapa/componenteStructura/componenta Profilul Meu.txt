@@ -1,0 +1,38 @@
+├── BackEnd
+│   ├── fisiere
+│   │    ├── BazaDate
+│	│	 │	 ├── conectare.php
+│	│	 │	 │		//Profilul Meu!
+│	│	 │	 │		
+│	│	 │ 	 └── profilBD.php
+│	│	 │			
+│	│	 │			
+│   │    └── ServiciiREST
+│   │      	 ├── profilREST.php
+│	│		 │		
+│	│		 │		
+│	│	  	 └── principal.php
+│	│				//Profilul Meu!
+│	│		 		
+│   └──index.php 
+│      // Profilul Meu!
+│  
+├── FrontEnd
+│   ├── fisiere
+│   │   └── aplicatie
+│   │         └── module
+│ 	│ 			    ├── controller
+│	│				│	  └──controllerProfil.js
+│ 	│ 			    ├── pagini
+│ 	│ 			    │ 	  └──parti
+│ 	│ 				│ 		   └──profilModal.js
+│   │               ├── service
+│	│				│	  └──profilService.js
+│	│				├── style
+│	│				│	  └──profil.css
+│   │               │
+│	│			    ├──introModulParticular.js
+│	│			    └──aplicatie.js
+└   └── mapa
+        └── index.html
+             <!-- Profil Modal-->

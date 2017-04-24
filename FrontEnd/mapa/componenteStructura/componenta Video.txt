@@ -1,0 +1,36 @@
+├── BackEnd
+│   ├── fisiere
+│   │    ├── BazaDate
+│	│	 │	 ├── conectare.php
+│	│	 │	 │		// Video
+│	│	 │	 │		
+│	│	 │ 	 └── videoBD.php
+│	│	 │			
+│	│	 │			
+│   │    └── ServiciiREST
+│   │      	 ├── videoREST.php
+│	│		 │		
+│	│		 │		
+│	│	  	 └── principal.php
+│	│				// Video
+│	│		 		
+│   └──index.php 
+│      // Video
+│  
+├── FrontEnd
+│   ├── fisiere
+│   │   └── aplicatie
+│   │         └── module
+│ 	│ 			    ├── controller
+│	│				│	  └──videoController.js
+│ 	│ 			    ├── pagini
+│ 	│ 			    │ 	  └──video.htm
+│   │               ├── service
+│	│				│	  └──serviceVideo.js
+│	│				├── style
+│	│				│	  └──video.css
+│   │               │
+│	│			    ├──introModulParticular.js
+│	│			    └──aplicatie.js
+└   └── mapa
+        

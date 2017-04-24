@@ -1,0 +1,38 @@
+├── BackEnd
+│   ├── fisiere
+│   │    ├── BazaDate
+│	│	 │	 ├── conectare.php
+│	│	 │	 │		// Autentificare cont
+│	│	 │	 │		
+│	│	 │ 	 └── autentificareBD.php
+│	│	 │			
+│	│	 │			
+│   │    └── ServiciiREST
+│   │      	 ├── autentificareREST.php
+│	│		 │		
+│	│		 │		
+│	│	  	 └── principal.php
+│	│				// Autentificare cont
+│	│		 		
+│   └──index.php 
+│     // Autentificare cont
+│  
+├── FrontEnd
+│   ├── fisiere
+│   │   └── aplicatie
+│   │         └── module
+│ 	│ 			    ├── controller
+│   │               │     └──autentificareContModalController.js
+│ 	│ 			    ├── pagini
+│ 	│ 			    │ 	  └──parti
+│   │               │            └── autentificareContModal.htm
+│   │               ├── service
+│	│				│	  └──serviceAutentificare.js
+│	│				├── style
+│	│				│	  └──creareContModal.css
+│   │               │
+│	│			    ├──introModulParticular.js
+│	│			    └──aplicatie.js
+└   └── mapa
+        └── index.html
+            <!-- Autentificare Cont-->

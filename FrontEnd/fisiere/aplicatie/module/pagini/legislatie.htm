@@ -1,0 +1,24 @@
+<div class="container">
+	<div class="row lege">
+		<div class="col-md-12">
+			<h1 class="textTitluLegislatie">Legislaţie rutieră</h1>
+			<div ng-repeat="l in legi">
+				<div class="list-group">
+					<a ng-click="afiseazaLege(l);contorizare(l)" class="list-group-item">{{l.lege}}</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="row lege">
+		<div class="col-md-12">
+			<div class="panel panel-default">
+				<div class="panel-heading">
+					<h3 class="panel-title"  ng-if="count==0">{{legi[0].lege}}</h3>
+					<h3 class="panel-title"  ng-if="count">{{elementLege.lege}}</h3>
+				</div>
+				<div class="panel-body"  ng-if="count==0"><p>{{legi[0].continutLege}}</p></div>
+				<div class="panel-body" ng-if="count"></div><p>{{elementLege.continutLege}}</p></div>
+			</div>
+		</div>
+	</div>
+</div>

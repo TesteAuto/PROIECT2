@@ -1,0 +1,11 @@
+.textTitluLegislatie{
+  text-align: center;
+  padding-top:10px;
+  padding-bottom:20px;
+  font-size:28px;
+  color: #222;
+}
+div.panel-body.ng-scope, p.ng-binding{
+  text-align: justify;
+}
+

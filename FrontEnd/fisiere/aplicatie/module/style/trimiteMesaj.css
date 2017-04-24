@@ -1,0 +1,35 @@
+/*FORMULAR TRIMITE-NE UN MESAJ!*/
+ legend{
+  border-style:none;
+  color: #222;
+}
+.textLegendaMesaj{
+  text-align: center;
+  padding-top:10px;
+  padding-bottom:20px;
+  font-size:28px;
+  color: #222;
+}
+.nrCaractereMesaj{
+    color:#00cc00;
+    padding-top: 10px;
+}
+.aliniereBtnMesaj{
+    text-align: center;
+}
+.marimeBtnMesaj{
+   width: 150px;
+}
+.eroareMesaj{
+    color:#ff4d4d;
+    padding-top: 10px;
+}
+@media screen and (min-width: 992px) {
+	.eroareMesaj{
+		font-size: 12px;
+	}
+	.marimeBtnMesaj{
+		width: 120px;
+	}
+}
+ /*SFARSIT FORMULAR TRIMITE-NE UN MESAJ!*/

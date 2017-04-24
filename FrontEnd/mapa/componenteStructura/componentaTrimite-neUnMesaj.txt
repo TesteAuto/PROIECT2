@@ -1,0 +1,37 @@
+├── BackEnd
+│   ├── fisiere
+│   │    ├── BazaDate
+│	│	 │	 ├── conectare.php
+│	│	 │	 │		// Trimite-ne un mesaj!
+│	│	 │	 │		
+│	│	 │ 	 └── emailBD.php
+│	│	 │			
+│	│	 │			
+│   │    └── ServiciiREST
+│   │      	 ├── emailREST.php
+│	│		 │		
+│	│		 │		
+│	│	  	 └── principal.php
+│	│				//Trimite-ne un mesaj!
+│	│		 		
+│   └──index.php 
+│      //Trimite-ne un mesaj!
+│  
+├── FrontEnd
+│   ├── fisiere
+│   │   └── aplicatie
+│   │         └── module
+│ 	│ 			    ├── controller
+│	│				│	  └──controllerEmail.js
+│ 	│ 			    ├── pagini
+│ 	│ 			    │ 	  
+│   │               ├── service
+│	│				│	  └──serviceMail.js
+│	│				├── style
+│	│				│	  └──trimiteMesaj.css
+│   │               │
+│	│			    ├──introModulParticular.js
+│	│			    └──aplicatie.js
+└   └── mapa
+        └── index.html
+            <!-- FORMULAR TRIMITE-NE UN MESAJ! -->

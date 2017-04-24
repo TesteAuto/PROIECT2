@@ -1,0 +1,31 @@
+ /*FORMULAR CREARE CONT NOU!*/
+ legend{
+  border-style:none;
+}
+.textLegenda{
+  text-align: center;
+  padding-top:10px;
+  font-size:35px;
+}
+.aliniereBtn{
+    text-align: center;
+}
+.marimeBtn{
+   width: 150px;
+}
+.eroare{
+    color:#ff4d4d;
+    padding-top: 7px;
+}
+.continutModalContNou{
+  margin: 0 auto;
+}
+@media screen and (max-width: 991px) {
+	.eroare{
+		font-size: 12px;
+	}
+	.marimeBtn{
+		width: 160px;
+	}
+}
+ /*SFARSIT FORMULAR CREARE CONT NOU!*/

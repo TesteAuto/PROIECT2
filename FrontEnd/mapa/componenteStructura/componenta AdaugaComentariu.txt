@@ -1,0 +1,36 @@
+├── BackEnd
+│   ├── fisiere
+│   │    ├── BazaDate
+│	│	 │	 ├── conectare.php
+│	│	 │	 │		// Adauga comentariu
+│	│	 │	 │		
+│	│	 │ 	 └── comentariuBD.php
+│	│	 │			
+│	│	 │			
+│   │    └── ServiciiREST
+│   │      	 ├── comentariuREST.php
+│	│		 │		
+│	│		 │		
+│	│	  	 └── principal.php
+│	│				// Adauga comentariu
+│	│		 		
+│   └──index.php 
+│      // Adauga comentariu
+│  
+├── FrontEnd
+│   ├── fisiere
+│   │   └── aplicatie
+│   │         └── module
+│ 	│ 			    ├── controller
+│	│				│	  └──comentariiController.js
+│ 	│ 			    ├── pagini
+│ 	│ 			    │ 	  
+│   │               ├── service
+│	│				│	  └──serviceComentariu.js
+│	│				├── style
+│	│				│	  └──intrebari.css
+│   │               │
+│	│			    ├──introModulParticular.js
+│	│			    └──aplicatie.js
+└   └── mapa
+       

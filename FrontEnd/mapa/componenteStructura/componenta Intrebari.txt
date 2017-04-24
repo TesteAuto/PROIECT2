@@ -1,0 +1,36 @@
+├── BackEnd
+│   ├── fisiere
+│   │    ├── BazaDate
+│	│	 │	 ├── conectare.php
+│	│	 │	 │		// Intrebari
+│	│	 │	 │		
+│	│	 │ 	 └── intrebariBD.php
+│	│	 │			
+│	│	 │			
+│   │    └── ServiciiREST
+│   │      	 ├── intrebariREST.php
+│	│		 │		
+│	│		 │		
+│	│	  	 └── principal.php
+│	│				// Intrebari
+│	│		 		
+│   └──index.php 
+│      // Intrebari
+│  
+├── FrontEnd
+│   ├── fisiere
+│   │   └── aplicatie
+│   │         └── module
+│ 	│ 			    ├── controller
+│	│				│	  └──intrebariController.js
+│ 	│ 			    ├── pagini
+│ 	│ 			    │ 	  └──intrebari.htm
+│   │               ├── service
+│	│				│	  └──serviceIntrebari.js
+│	│				├── style
+│	│				│	  └──intrebari.css
+│   │               │
+│	│			    ├──introModulParticular.js
+│	│			    └──aplicatie.js
+└   └── mapa
+        

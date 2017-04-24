@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+	<meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Teste Auto</title>
+  <!-- Bootstrap CSS -->
+	<link href="../node_modules/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+  <!-- SweetAlert CSS-->
+  <link href="../node_modules/sweetalert/dist/sweetalert.css" rel="stylesheet">
+  <!-- Xeditable CSS -->
+  <link href="../node_modules/angular-xeditable/dist/css/xeditable.css" rel="stylesheet">
+  <!-- UI Bootstrap CSS -->
+  <link href="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-csp.css" rel="stylesheet">
+  <link href="../fisiere/aplicatie/module/style/reset.css" rel="stylesheet">
+  <link href="../fisiere/aplicatie/module/style/index.css" rel="stylesheet">
+  <link href="../fisiere/aplicatie/module/style/acasa.css" rel="stylesheet">
+  <link href="../fisiere/aplicatie/module/style/legislatie.css" rel="stylesheet">
+  <link href="../fisiere/aplicatie/module/style/creareContModal.css" rel="stylesheet">
+  <link href="../fisiere/aplicatie/module/style/profil.css" rel="stylesheet">
+  <link href="../fisiere/aplicatie/module/style/trimiteMesaj.css" rel="stylesheet">
+  <link href="../fisiere/aplicatie/module/style/video.css" rel="stylesheet">
+  <link href="../fisiere/aplicatie/module/style/intrebari.css" rel="stylesheet">
+  <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+  <link rel="icon" type="image/png" href="">
+  <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+  <![endif]-->
+</head>
+<body ng-controller = "controllerPrincipal">
+  <!-- HEADER -->
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid pozitieTextHeader">
+      <div class="navbar-header">
+         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#hamburger">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">TesteAuto.ro</a>
+      </div>
+      <div class="collapse navbar-collapse" id="hamburger">
+        <ul class="nav navbar-nav">
+            <li class="active index"><a ui-sref="acasa" data-toggle="collapse" data-target="#hamburger"><span class="glyphicon glyphicon-home"></span></a></li>
+            <li><a ui-sref="legislatie" data-toggle="collapse" data-target="#hamburger">Legislaţie</a></li>
+            <li><a ui-sref="indicatoare" data-toggle="collapse" data-target="#hamburger">Indicatoare şi marcaje rutiere</a></li>
+            <li><a ui-sref="informatii" data-toggle="collapse" data-target="#hamburger">Informaţii de actualitate</a></li>
+            <li><a ui-sref="intrebari" data-toggle="collapse" data-target="#hamburger">Întrebări frecvente şi răspunsuri</a></li>
+            <li><a ui-sref="video" data-toggle="collapse" data-target="#hamburger">Cursuri Video</a></li>
+            <li><a ui-sref="chestionare" data-toggle="collapse" data-target="#hamburger">Chestionare</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+          <!-- Creare Cont Nou -->
+          <li><a ng-if="!autentificareJWT" data-toggle="collapse" data-target="#hamburger"><span class="glyphicon glyphicon-user"></span><span data-toggle="modal" data-target="#creareContModal"> Creare cont</span></a></li>
+          <!-- Autentificare Cont-->
+          <li><a ng-if="!autentificareJWT" data-toggle="collapse" data-target="#hamburger"><span class="glyphicon glyphicon-log-in"></span><span data-toggle="modal" data-target="#autentificareCont"> Autentificare</span></a></li>
+          <!-- Profil Modal-->
+          <li class="hidden-xs"><a ng-if = "autentificareJWT" data-toggle="collapse" data-target="#hamburger"><span class="glyphicon glyphicon-globe"></span><span data-toggle="modal" data-target="#profilModal"> Profilul meu</span></a></li>
+          <li><a ng-if = "autentificareJWT" data-toggle="collapse" data-target="#hamburger" ng-click="dezautentificare()"><span class="glyphicon glyphicon-off"></span> Dezautentificare</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Creare Cont Nou -->
+  <div ng-include="'../fisiere/aplicatie/module/pagini/parti/creareContModal.htm'"></div>
+  <!-- Autentificare Cont-->
+  <div ng-include="'../fisiere/aplicatie/module/pagini/parti/autentificareContModal.htm'"></div>
+  <!-- Profil Modal-->
+  <div ng-include="'../fisiere/aplicatie/module/pagini/parti/profilModal.htm'"></div>
+  <!-- FINAL HEADER -->
+  <!-- CORP PAGINA -->
+  <div class="container-fluid">
+    <div class="wrapper">
+      <div ui-view></div>
+    </div>
+  </div>
+  <!-- SFARSIT CORP PAGINA -->
+  <!-- FOOTER -->
+  <footer id="footer" class="clearfix">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-3">
+          <ul>
+              <li><a ui-sref="acasa"><span class="glyphicon glyphicon-home"></span></a></li>
+              <li><a ui-sref="legislatie">Legislaţie</a></li>
+              <li><a ui-sref="indicatoare">Indicatoare şi marcaje rutiere</a></li>
+              <li><a ui-sref="informatii">Informaţii de actualitate</a></li>
+              <li><a ui-sref="intrebari">Întrebări frecvente şi răspunsuri</a></li>
+              <li><a ui-sref="video">Cursuri Video</a></li>
+              <li><a ui-sref="chestionare">Chestionare</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-6 col-md-3">
+          <ul>
+              <li><a href="http://www.drpciv.ro/info-portal/changeLanguage.do?lang=ro" target="_blank"> www.drpciv.ro</a></li>
+              <li><a href="http://www.politiaromana.ro/dpr/legislatie_rutiera.htm" target="_blank"> www.politiaromana.ro</a></li>
+              <li><a href="http://www.anpc.gov.ro/" target="_blank"> www.anpc.gov.ro</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-12 col-md-6" ng-controller = "controllerEmail">
+        <!-- FORMULAR TRIMITE-NE UN MESAJ! -->
+          <form class="form-horizontal" name="trimiteMesajForm" novalidate>
+            <fieldset>
+              <legend class="textLegendaMesaj">Trimite-ne un mesaj!</legend>
+              <!-- Text input E-mail-->
+              <div class="form-group">
+                <label class="col-md-3 control-label">E-mail</label>
+                <div class="col-md-8 inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                    <input name="email" placeholder="Adresa ta de e-mail" class="form-control" ng-model="email" type="text" required>
+                  </div>
+                  <!-- Validare camp email -->
+                  <div ng-messages="trimiteMesajForm.email.$error">
+                    <div ng-message="required" class="eroareMesaj">* Vă rugăm să completaţi câmpul e-mail</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Text input Subiect-->
+              <div class="form-group">
+                <label class="col-md-3 control-label">Subiect</label>
+                <div class="col-md-8 inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-share-alt"></i></span>
+                    <input  name="subiect" placeholder="Subiect mesaj" class="form-control" ng-model="subiect" type="text" required>
+                  </div>
+                  <!-- Validare camp subiect -->
+                  <div ng-messages="trimiteMesajForm.subiect.$error">
+                    <div ng-message="required" class="eroareMesaj">* Vă rugăm să completaţi câmpul subiect</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Text area Mesaj-->
+              <div class="form-group">
+                <label class="col-md-3 control-label">Mesaj</label>
+                <div class="col-md-8 inputGroupContainer">
+                  <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
+                    <!-- Numar limitat de caractere intr-un mesaj -->
+                    <textarea class="form-control" name="nrCaractere" placeholder="Mesajul tău" ng-model="nrCaractere" ng-trim="false" maxlength="250" required></textarea>
+                  </div>
+                  <!-- Validare camp mesaj -->
+                  <div ng-messages="trimiteMesajForm.nrCaractere.$error">
+                    <div ng-message="required" class="eroareMesaj">* Vă rugăm să completaţi câmpul mesaj</div>
+                  </div>
+                  <span class="nrCaractereMesaj pull-right">*Caractere rămase {{250 - nrCaractere.length}}</span>
+                </div>
+              </div>
+              <!-- Button -->
+              <div class="form-group">
+                <label class="col-md-3 control-label"></label>
+                <div class="col-md-8">
+                  <div class="aliniereBtnMesaj">
+                    <button type="submit" class="btn btn-warning marimeBtnMesaj" ng-disabled="trimiteMesajForm.$invalid" ng-click = "trimiteEmail()">Trimite <span class="glyphicon glyphicon-send"></span></button>
+                    <button type="submit" class="btn btn-danger marimeBtnMesaj" ng-click = "cancel()">Anulează <span class="glyphicon glyphicon-erase"></span></button>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </div>
+        </div>
+      </div>
+      <div class="row"  id="sub-footer">
+          <p class="col-sm-12 text-center"> Copyright &copy; 2017 - Toate drepturile rezervate - www.TesteAuto.ro</p>  
+      </div>
+  </footer>
+  <!-- SFARSIT FOOTER -->
+  <!-- Angular -->
+  <script src="../node_modules/angular/angular.js"></script>
+  <!-- jQuery -->
+  <script src="../node_modules/jquery/dist/jquery.js"></script>
+  <!-- Bootstrap JS-->
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.js"></script>
+  <!-- Angular-messages -->
+  <script src="../node_modules/angular-messages/angular-messages.js"></script>
+  <!-- SweetAlert -->
+  <script src="../node_modules/sweetalert/dist/sweetalert.min.js"></script>
+  <!-- JWT DECODE -->
+  <script src="../node_modules/jwt-decode/build/jwt-decode.js"></script>
+   <!-- CAMPURI EDITABILE -->
+  <script src="../node_modules/angular-xeditable/dist/js/xeditable.js"></script>
+  <!-- PENTRU UPLOAD IMAGINE-->
+  <script src="../node_modules/ng-flow/dist/ng-flow-standalone.min.js"></script>
+  <!-- PENTRU ACCORDION-->
+  <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap.js"></script>
+  <script src="../node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js"></script>
+  <!-- Fisiere concatenate -->
+  <script src="continut.js"></script>
+</body>
+</html>
